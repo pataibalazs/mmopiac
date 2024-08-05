@@ -20,23 +20,23 @@ const ContactPage = () => {
                   1. Ha bármilyen kérdése van az arany vagy tárgyakvétele során, kérjük, forduljon 365/24/7 Online Támogatásunkhoz az alábbi módokon:
                    
                 </p>
-                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">Discord ID: mmosale88
+                <p className="mt-1 text-md font-bold text-gray-900 text-left mb-4">Discord ID: mmosale88
                 </p>
 
                 <p className="mt-6 text-md leading-8 text-gray-900 text-left">
                 2. Ha el szeretné adni Metin2-ös, vagy Solaris2-ös fiókját vagy más szolgáltatásokat, kérjük, vegye fel a kapcsolatot a képviselőnk Discordján egy kiváló ajánlatért.
                 </p>
-                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">complaint@gmail.com
+                <p className="mt-1 text-md font-bold text-gray-900 text-left mb-4">complaint@gmail.com
                 </p>
                 <p className="mt-6 text-md leading-8 text-gray-900 text-left">
                 3. Ha bármilyen kérdése van a szolgáltatással kapcsolatos panaszról, kérjük, forduljon hozzánk emailben. Általában 12 órán belül megoldást kap.
                 </p>
-                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">Aftersale365@gmail.com
+                <p className="mt-1 text-md font-bold text-gray-900 text-left mb-4">Aftersale365@gmail.com
                 </p>
                 <p className="mt-6 text-md leading-8 text-gray-900 text-left">
                 4. Ha bármilyen kérdése van az mmopiac üzleti együttműködéssel kapcsolatban, kérjük, vegye fel velünk a kapcsolatot az alábbi módokon.
                 </p>
-                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">Üzleti érdeklődés: affiliate4game@gmail.com
+                <p className="mt-1 text-md font-bold text-gray-900 text-left mb-4">Üzleti érdeklődés: affiliate4game@gmail.com
                   </p>
                 
 
