@@ -1,123 +1,161 @@
-import React, { useState } from "react";
+import React from "react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Field, Label, Switch } from "@headlessui/react";
 
-const SellToUsPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    itemName: "",
-    itemDescription: "",
-    price: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here, e.g., sending data to a server
-    console.log("Form submitted", formData);
-  };
-
+const SellToUs = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <header className="bg-purple-600 w-full py-4">
-        <h1 className="text-3xl text-white text-center">Sell to MMO Bazaar</h1>
-      </header>
-
-      <main className="flex flex-col items-center mt-10 p-6 bg-white shadow-md rounded-lg w-11/12 md:w-2/3 lg:w-1/2">
-        <h2 className="text-2xl font-bold mb-4 text-center">
-          Sell Your Items to Us
-        </h2>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="name">
-              Your Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-              required
-            />
+      <main className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg w-11/12 mt-10">
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-5xl lg:text-center">
+              <p className="mt-2 text-md font-bold tracking-tight text-amber-500">
+                Adj el nekünk
+              </p>
+              <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+                Van játékbeli valutád? Mi megvesszük!
+              </p>
+              <div className="justify-between">
+                <p className="mt-6 text-md leading-8 text-gray-900 text-left">
+                  Mint az egyik legjobb Metin2 Yang eladó, az mmopiac.hu nemcsak
+                  a Yang eladása az egyedüli szolgáltatásunk, hanem Metin2 Yang
+                  vásárlása a játékosoktól is nagy szolgáltatásunk. Az egyre
+                  növekvő ügyféligények miatt Metin2 beszállítóink szeretnék
+                  meghívni mindazokat, akiknek van Yang-juk, hogy csatlakozzanak
+                  üzletünkhöz. Mindig a legjobb árat kínáljuk a Yang eladóknak,
+                  biztosítva, hogy több pénzt kereshessenek, mint bármely más
+                  weboldalon.
+                </p>
+                <p className="mt-6 text-md font-bold leading-8 text-gray-900 text-left">
+                  Mi a folyamat a Yang eladásához számunkra?
+                </p>
+                <p className="mt-6 text-md leading-8 text-gray-900 text-left">
+                  1. Lépjen kapcsolatba élő chatünkkel vagy a kapcsolódó
+                  képviselőnkkel Skype-on, és küldje el kérését a Yang
+                  eladásáról, mondja el nekünk, hogy Metin2 Yangot szeretne
+                  eladni, és még azt is, hogy mennyit szeretne eladni.
+                  <br />
+                  2. Ajánlatot adunk a Yang-jára, majd azonnal megállapodás
+                  születik közöttünk.
+                  <br />
+                  3. Egy mindkettőnk számára ismert kereskedelmi helyszínt
+                  biztosítunk. Megkérdezzük az RSN-jét (játékbeli nevét), és
+                  kereskedünk Önnel.
+                  <br />
+                  4. A kereskedés befejezése után megkérdezzük a PayPal e-mail
+                  címét vagy a G2A fogadó fiókját.
+                  <br />
+                  5. A pénzküldés azonnal megtörténik. PayPal és G2A fizetés
+                  támogatott.
+                  <br />
+                  Ezek a lépések mindig kényelmesek és egyszerűek, általában
+                  csak néhány percet vesz igénybe az egész folyamat befejezése
+                  attól a pillanattól kezdve, hogy kapcsolatba lép velünk.
+                </p>
+                <p className="mt-6 text-md font-bold leading-8 text-gray-900 text-left">
+                  Miért kellene eladnom a Yang-ot az MMOPIAC-nak?
+                </p>
+                <p className="mt-6 text-md leading-8 text-gray-900 text-left">
+                  <span className="font-bold">1. Csodálatos Ajánlat</span>
+                  Sokkal több pénzt kereshet, ha eladja nekünk a Yang-ot, mint
+                  ha más weboldalaknak adná el, mert naponta összehasonlítjuk a
+                  piaci árakat és a legversenyképesebb ajánlatot tartjuk fenn
+                  Önnek.
+                  <span className="font-bold">
+                    2. Azonnali és Biztonságos Fizetés
+                  </span>
+                  Azonnal megkapja a valós pénzt, amint a kereskedés
+                  befejeződik. Az MMOPIAC soha nem késlelteti a tranzakciók
+                  kifizetését vagy nem hagyja figyelmen kívül a pénzét. A
+                  fizetés után nincs csalárd vagy szándékos visszatérítés
+                  garantált.
+                  <span className="font-bold">
+                    3. Legmagasabb Megbízhatóság
+                  </span>
+                  Az MMOPIAC 2008 óta működik, így csapatunk bőséges
+                  tapasztalattal rendelkezik a Metin2 Yang eladásában és
+                  vásárlásában, és jó hírnévre tett szert az évek során.
+                  Kétségtelenül garantálni tudjuk az Ön elégedettségét és
+                  biztonságát.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="email">
-              Your Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="itemName">
-              Item Name
-            </label>
-            <input
-              type="text"
-              id="itemName"
-              name="itemName"
-              value={formData.itemName}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 mb-2"
-              htmlFor="itemDescription"
-            >
-              Item Description
-            </label>
-            <textarea
-              id="itemDescription"
-              name="itemDescription"
-              value={formData.itemDescription}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-              required
-            ></textarea>
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="price">
-              Asking Price
-            </label>
-            <input
-              type="number"
-              id="price"
-              name="price"
-              value={formData.price}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+          <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-center mt-14">
+            Írj nekünk!
+          </p>
+          <form
+            action="#"
+            method="POST"
+            className="mx-auto mt-16 max-w-xl sm:mt-20"
           >
-            Submit
-          </button>
-        </form>
-      </main>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="first-name"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Email cím
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    id="first-name"
+                    name="first-name"
+                    type="text"
+                    autoComplete="given-name"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="last-name"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Eladandó termék
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    id="last-name"
+                    name="last-name"
+                    type="text"
+                    autoComplete="family-name"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
 
-      <footer className="bg-purple-600 w-full py-4 mt-auto">
-        <p className="text-white text-center">
-          &copy; 2024 MMO Bazaar. All rights reserved.
-        </p>
-      </footer>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Üzenet
+                </label>
+                <div className="mt-2.5">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    defaultValue={""}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mt-10">
+              <button
+                type="submit"
+                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Küldés
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
     </div>
   );
 };
 
-export default SellToUsPage;
+export default SellToUs;
