@@ -9,6 +9,8 @@ import ContactPage from "./pages/ContactPage";
 import RegisterPage from "./pages/RegisterPage";
 import TradeChatPage from "./pages/TradeChatPage";
 import WebSocketListener from "./components/WebSocketListener";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   document.addEventListener("snipcart.ready", () => {
@@ -22,6 +24,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <WebSocketListener />
       <Routes>
@@ -33,6 +36,7 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/order-done/:orderId" element={<TradeChatPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

@@ -143,12 +143,6 @@ const ReviewsPage = () => {
         </div>
       </main>
 
-      <footer className="bg-blue-600 w-full py-4 mt-auto">
-        <p className="text-white text-center">
-          &copy; 2024 MMO Bazaar. All rights reserved.
-        </p>
-      </footer>
-
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <p>Thank you for your feedback!</p>
       </Modal>

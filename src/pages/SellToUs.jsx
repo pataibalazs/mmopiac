@@ -56,22 +56,22 @@ const SellToUs = () => {
                   Miért kellene eladnom a Yang-ot az MMOPIAC-nak?
                 </p>
                 <p className="mt-6 text-md leading-8 text-gray-900 text-left">
-                  <span className="font-bold">1. Csodálatos Ajánlat</span>
+                  <p className="font-bold">1. Csodálatos Ajánlat</p>
                   Sokkal több pénzt kereshet, ha eladja nekünk a Yang-ot, mint
                   ha más weboldalaknak adná el, mert naponta összehasonlítjuk a
                   piaci árakat és a legversenyképesebb ajánlatot tartjuk fenn
                   Önnek.
-                  <span className="font-bold">
+                  <p className="font-bold">
                     2. Azonnali és Biztonságos Fizetés
-                  </span>
+                  </p>
                   Azonnal megkapja a valós pénzt, amint a kereskedés
                   befejeződik. Az MMOPIAC soha nem késlelteti a tranzakciók
                   kifizetését vagy nem hagyja figyelmen kívül a pénzét. A
                   fizetés után nincs csalárd vagy szándékos visszatérítés
                   garantált.
-                  <span className="font-bold">
+                  <p className="font-bold">
                     3. Legmagasabb Megbízhatóság
-                  </span>
+                  </p>
                   Az MMOPIAC 2008 óta működik, így csapatunk bőséges
                   tapasztalattal rendelkezik a Metin2 Yang eladásában és
                   vásárlásában, és jó hírnévre tett szert az évek során.
@@ -81,13 +81,13 @@ const SellToUs = () => {
               </div>
             </div>
           </div>
-          <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-center mt-14">
+          <p className="mt-10 text-3xl font-bold tracking-tight sm:text-4xl text-center mt-14">
             Írj nekünk!
           </p>
           <form
             action="#"
             method="POST"
-            className="mx-auto mt-16 max-w-xl sm:mt-20"
+            className="mx-auto mt-14 mb-14 max-w-xl"
           >
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -103,26 +103,24 @@ const SellToUs = () => {
                     name="first-name"
                     type="text"
                     autoComplete="given-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-500 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
               <div>
-                <label
-                  htmlFor="last-name"
-                  className="block text-sm font-semibold leading-6 text-gray-900"
-                >
-                  Eladandó termék
+                <label htmlFor="location" className="block text-sm font-semibold leading-6 text-gray-900">
+                  Termék amivel rendelkezel
                 </label>
-                <div className="mt-2.5">
-                  <input
-                    id="last-name"
-                    name="last-name"
-                    type="text"
-                    autoComplete="family-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
+                <select
+                  id="location"
+                  name="location"
+                  defaultValue="Canada"
+                  className="mt-2 block bg-white w-full rounded-md border-0 py-3 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-amber-500 sm:text-sm sm:leading-6"
+                >
+                  <option>Metin2 Yang</option>
+                  <option>Solaris Yang</option>
+                  <option>DDMT2 Yang</option>
+                </select>
               </div>
 
               <div className="sm:col-span-2">
@@ -137,7 +135,7 @@ const SellToUs = () => {
                     id="message"
                     name="message"
                     rows={4}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-500 sm:text-sm sm:leading-6"
                     defaultValue={""}
                   />
                 </div>
@@ -146,7 +144,7 @@ const SellToUs = () => {
             <div className="mt-10">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="block w-full rounded-md bg-amber-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Küldés
               </button>
