@@ -10,18 +10,9 @@ import RegisterPage from "./pages/RegisterPage";
 import TradeChatPage from "./pages/TradeChatPage";
 import WebSocketListener from "./components/WebSocketListener";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
-  document.addEventListener("snipcart.ready", () => {
-    console.log("Snipcart Ready");
-    // You can safely use window.Snipcart here
-    window.Snipcart.events.on("order.completed", (Response) => {
-      console.log(Response);
-      console.log("Order completed1");
-    });
-  });
-
   return (
     <Router>
       <ScrollToTop />

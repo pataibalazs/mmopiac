@@ -26,12 +26,12 @@ export default function Footer() {
         <div className="flex justify-center space-x-10">
           <img
             className="h-14 mt-10 w-auto"
-            src="/logo_without_bg.png"
+            src="/pictures/logo_without_bg.png"
             alt="Logo"
           />
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; 2024 MMOPIAC, Kft. Minden jog fenntartva.
+          &copy; 2024 MMOPIAC Kft. Minden jog fenntartva.
         </p>
       </div>
     </footer>

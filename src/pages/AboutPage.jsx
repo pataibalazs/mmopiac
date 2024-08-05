@@ -60,7 +60,7 @@ const AboutPage = () => {
                 </p>
                 <img
                   className="w-6/12 mt-8 ml-4"
-                  src="/aboutuspic.jpg"
+                  src="/pictures/aboutuspic.jpg"
                   alt="Logo"
                 />
               </div>

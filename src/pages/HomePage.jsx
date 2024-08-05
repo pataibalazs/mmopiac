@@ -7,7 +7,7 @@ const Homepage = () => {
     <div className="bg-gray-100">
       <BuyingProcessBar step={3} />
       <div className="flex justify-center">
-        <img className="w-auto" src="/banner.png" alt="Logo" />
+        <img className="w-auto" src="/pictures/banner.png" alt="Logo" />
       </div>
       <div className="flex flex-col items-center justify-center">
         <div className="font-bold text-3xl mt-4">Vegyél Metin2 Aranyat</div>
@@ -21,18 +21,18 @@ const Homepage = () => {
         <PurchaseCard
           title="METIN2 ARANY"
           price={10}
-          backgroundImage="./purchaseCardBgGreen.webp"
+          backgroundImage="./pictures/purchaseCardBgGreen.webp"
           itemId="metin-gold"
           itemDescription="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-          itemImage="./metin2-gold.webp"
+          itemImage="./pictures/metin2-gold.webp"
         />
         <PurchaseCard
           title="SOLARIS ARANY"
           price={20}
-          backgroundImage="./purchaseCardBgPurple.webp"
+          backgroundImage="./pictures/purchaseCardBgPurple.webp"
           itemId="solaris-gold"
           itemDescription="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-          itemImage="./solaris-gold.webp"
+          itemImage="./pictures/solaris-gold.webp"
         />
       </div>
 
