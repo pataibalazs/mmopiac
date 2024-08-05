@@ -1,88 +1,54 @@
-import React, { useState } from "react";
+import React from "react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Field, Label, Switch } from "@headlessui/react";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here, e.g., sending data to a server
-    console.log("Form submitted", formData);
-  };
-
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <header className="bg-green-600 w-full py-4">
-        <h1 className="text-3xl text-white text-center">Contact Us</h1>
-      </header>
+      <main className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg w-11/12 mt-10">
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-5xl lg:text-center">
+              <p className="mt-2 text-md font-bold tracking-tight text-amber-500">
+                Kontakt
+              </p>
+              <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+                Kérdés, vagy probléma esetén írj nekünk.
+              </p>
+              <div className="justify-between max-w-4xl">
+                <p className="mt-6 text-md leading-8 text-gray-900 text-left">
+                  1. Ha bármilyen kérdése van az arany vagy tárgyakvétele során, kérjük, forduljon 365/24/7 Online Támogatásunkhoz az alábbi módokon:
+                   
+                </p>
+                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">Discord ID: mmosale88
+                </p>
 
-      <main className="flex flex-col items-center mt-10 p-6 bg-white shadow-md rounded-lg w-11/12 md:w-2/3 lg:w-1/2">
-        <h2 className="text-2xl font-bold mb-4 text-center">
-          We'd love to hear from you!
-        </h2>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="name">
-              Your Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-              required
-            />
+                <p className="mt-6 text-md leading-8 text-gray-900 text-left">
+                2. Ha el szeretné adni Metin2-ös, vagy Solaris2-ös fiókját vagy más szolgáltatásokat, kérjük, vegye fel a kapcsolatot a képviselőnk Discordján egy kiváló ajánlatért.
+                </p>
+                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">complaint@gmail.com
+                </p>
+                <p className="mt-6 text-md leading-8 text-gray-900 text-left">
+                3. Ha bármilyen kérdése van a szolgáltatással kapcsolatos panaszról, kérjük, forduljon hozzánk emailben. Általában 12 órán belül megoldást kap.
+                </p>
+                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">Aftersale365@gmail.com
+                </p>
+                <p className="mt-6 text-md leading-8 text-gray-900 text-left">
+                4. Ha bármilyen kérdése van az mmopiac üzleti együttműködéssel kapcsolatban, kérjük, vegye fel velünk a kapcsolatot az alábbi módokon.
+                </p>
+                <p className="mt-4 text-md font-bold text-gray-900 text-left mb-4">Üzleti érdeklődés: affiliate4game@gmail.com
+                  </p>
+                
+
+                
+                
+                
+              </div>
+            </div>
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="email">
-              Your Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="message">
-              Your Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-              required
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
-          >
-            Send Message
-          </button>
-        </form>
+        
+        </div>
       </main>
-
-      <footer className="bg-green-600 w-full py-4 mt-auto">
-        <p className="text-white text-center">
-          &copy; 2024 MMO Bazaar. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 };
