@@ -138,6 +138,7 @@ const ReviewsPage = () => {
               rating={review.rating}
               comment={review.comment_text}
               date={review.comment_date}
+              homepage={false}
             />
           ))}
         </div>

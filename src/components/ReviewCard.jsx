@@ -1,7 +1,7 @@
 import React from "react";
 import Star from "../components/Star";
 
-const ReviewCard = ({ name, rating, comment, date }) => {
+const ReviewCard = ({ name, rating, comment, date, homepage }) => {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -9,7 +9,7 @@ const ReviewCard = ({ name, rating, comment, date }) => {
   });
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-4 flex flex-col justify-between">
+    <div className={`bg-white shadow-md rounded-lg p-6 mb-4 flex flex-col justify-between ${homepage ? 'px-10' : ''}`}>
       <div>
         <div className="flex items-center mb-2">
           {[...Array(5)].map((_, i) => (

@@ -59,7 +59,7 @@ const AboutPage = () => {
                   felhasználóinknak a következőt tudjuk biztosítani:
                 </p>
                 <img
-                  className="w-6/12 mt-8 ml-4"
+                  className="w-6/12 mt-8 ml-4 rounded-md"
                   src="/pictures/aboutuspic.jpg"
                   alt="Logo"
                 />
