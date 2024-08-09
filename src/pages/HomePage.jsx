@@ -31,6 +31,9 @@ const Homepage = () => {
       <div className="bg-gray-100 flex justify-center">
         <main className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg w-11/12 mt-14">
           <div className="flex flex-col items-center justify-center">
+          <p className="mt-2 text-md font-bold tracking-tight text-amber-500 text-center">
+          Vásárolj
+        </p>
             <div className="font-bold text-3xl mb-2">Vegyél Metin2 Aranyat</div>
             <div className="text-lg">
               A legjobb helyen jársz ha szeretnél Metin2, illetve egyéb privát
@@ -41,7 +44,7 @@ const Homepage = () => {
             <PurchaseCard
               title="METIN2 ARANY"
               price={10}
-              backgroundImage="./pictures/purchaseCardBgGreen.webp"
+              backgroundImage="./pictures/purchaseCardBgGreen.png"
               itemId="metin-gold"
               itemDescription="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
               itemImage="./pictures/metin2-gold.webp"
@@ -49,7 +52,7 @@ const Homepage = () => {
             <PurchaseCard
               title="SOLARIS ARANY"
               price={20}
-              backgroundImage="./pictures/purchaseCardBgPurple.webp"
+              backgroundImage="./pictures/purchaseCardBgPurple.png"
               itemId="solaris-gold"
               itemDescription="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
               itemImage="./pictures/solaris-gold.webp"
