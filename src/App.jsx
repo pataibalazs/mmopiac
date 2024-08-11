@@ -6,7 +6,6 @@ import HomePage from "./pages/HomePage";
 import SellToUs from "./pages/SellToUs";
 import Reviews from "./pages/Reviews";
 import ContactPage from "./pages/ContactPage";
-import RegisterPage from "./pages/RegisterPage";
 import TradeChatPage from "./pages/TradeChatPage";
 import WebSocketListener from "./components/WebSocketListener";
 import Footer from "./components/Footer";
@@ -23,7 +22,6 @@ const App = () => {
         <Route path="/selltous" element={<SellToUs />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/register" element={<RegisterPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/order-done/:orderId" element={<TradeChatPage />} />
       </Routes>
