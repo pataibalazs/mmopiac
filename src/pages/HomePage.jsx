@@ -63,7 +63,7 @@ const Homepage = () => {
             />
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="font-bold text-3xl mb-4 mt-14">
+            <div className="font-bold text-3xl mb-8 mt-14">
               Gyakori kérdések
             </div>
           </div>
