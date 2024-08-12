@@ -1,8 +1,58 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Mosaic } from "react-loading-indicators";
 
 const TradeChatPage = () => {
   const { orderId } = useParams();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isValid, setIsValid] = useState(false);
+
+  useEffect(() => {
+    const validateOrder = async () => {
+      try {
+        const response = await fetch(
+          `https://thawing-dawn-87843-f5b692533558.herokuapp.com/orders-check?orderId=${orderId}`
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const responseData = await response.json();
+        const status = responseData.status;
+        console.log(`Order status: ${status}`);
+
+        if (status === "Processed") {
+          setIsValid(true);
+        } else if (status === "Paid") {
+          navigate("/order-fulfilled");
+        } else if (status === "Order not found") {
+          navigate("/error");
+        }
+      } catch (error) {
+        console.error("Error fetching order status:", error);
+        navigate("/error");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    validateOrder();
+  }, [orderId, navigate]);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <Mosaic color="#f59e0b" size="large" text="" textColor="" />
+      </div>
+    );
+  }
+
+  if (!isValid) {
+    return null;
+  }
+
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
       <header className="bg-green-600 w-full py-4">

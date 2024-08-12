@@ -7,6 +7,8 @@ import SellToUs from "./pages/SellToUs";
 import Reviews from "./pages/Reviews";
 import ContactPage from "./pages/ContactPage";
 import TradeChatPage from "./pages/TradeChatPage";
+import ErrorPage from "./pages/ErrorPage";
+import OrderFulfilledPage from "./pages/OrderFulfilledPage";
 import WebSocketListener from "./components/WebSocketListener";
 import Footer from "./components/Footer";
 import ScrollToTop from "./ScrollToTop";
@@ -23,6 +25,8 @@ const App = () => {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/order-fulfilled" element={<OrderFulfilledPage />} />
+        <Route path="/error" element={<ErrorPage />} />
         <Route path="/order-done/:orderId" element={<TradeChatPage />} />
       </Routes>
       <Footer />
