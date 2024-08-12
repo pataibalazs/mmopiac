@@ -33,7 +33,7 @@ const Homepage = () => {
         />
       </div>
       <div className="bg-gray-100 flex justify-center">
-        <main className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg w-11/12 mt-14">
+        <main className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg w-11/12 mt-10">
           <div className="flex flex-col items-center justify-center">
             <p className="mt-2 text-md font-bold tracking-tight text-amber-500 text-center">
               Vásárolj
