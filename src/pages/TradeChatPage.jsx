@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { Mosaic } from "react-loading-indicators";
+
 
 const TradeChatPage = () => {
   const { orderId } = useParams();
@@ -22,7 +23,7 @@ const TradeChatPage = () => {
         const responseData = await response.json();
         const status = responseData.status;
         console.log(`Order status: ${status}`);
-
+        
         if (status === "Processed") {
           setIsValid(true);
         } else if (status === "Paid") {
@@ -54,48 +55,37 @@ const TradeChatPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <header className="bg-green-600 w-full py-4">
-        <h1 className="text-3xl text-white text-center">TradeChatPage</h1>
-        <h1 className="text-3xl text-white text-center">{orderId}</h1>
-      </header>
-
-      <main className="flex flex-col items-center mt-10 p-6 bg-white shadow-md rounded-lg w-11/12 md:w-2/3 lg:w-1/2">
-        <section className="mb-6">
-          <h2 className="text-2xl font-bold mb-4 text-center">Our Mission</h2>
-          <p className="text-gray-700 text-center">
-            At MMO Bazaar, our mission is to provide gamers with the best
-            virtual items and currencies for their favorite MMO games. We strive
-            to offer a seamless shopping experience with a focus on customer
-            satisfaction and security.
-          </p>
-        </section>
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-bold mb-4 text-center">Who We Are</h2>
-          <p className="text-gray-700 text-center">
-            MMO Bazaar is a dedicated team of gamers and developers passionate
-            about online gaming. We understand the needs of our customers
-            because we share the same passion for immersive gaming experiences.
-          </p>
-        </section>
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-bold mb-4 text-center">What We Offer</h2>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>Wide range of in-game items</li>
-            <li>Various virtual currencies</li>
-            <li>Secure transactions</li>
-            <li>24/7 customer support</li>
-          </ul>
-        </section>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
+      <main className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg w-11/12 mt-10">
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-5xl lg:text-center">
+              <p className="mt-2 text-md font-bold tracking-tight text-amber-500">
+                Valuta átadása
+              </p>
+              <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
+                Kövesd a lépéseket
+              </p>
+              <div className="flex flex-col items-center">
+              <p className="text-lg mt-6 font-normal mb-6 text-left w-10/12 ">
+                A játékbeli valuta megkapásához <span className="font-bold">kattints jobb alsó sarokban található kék chat ablak ikonra</span>, ahol a felvesszük veled a kapcsolatot és megbeszéljük, hogy hol találkozzunk a játékban. 
+              </p>
+              <p className="text-lg font-normal mb-6 text-left w-10/12 ">
+              Nagyon fontos, hogy semmiképpen sem a játékban fogunk veled kommunikálni, hanem az oldalon található chatablakon keresztül. Tehát bárki ír rád a játékon belül a tranzakcióval kapcsolatban valószínűleg rossz szándékkal teszi.
+              </p>
+              </div>
+              
+              <div className="flex justify-center mt-4 mb-10">
+                <img
+                  className="w-11/12 rounded-xl"
+                  src="/pictures/banner.png"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
-
-      <footer className="bg-green-600 w-full py-4 mt-auto">
-        <p className="text-white text-center">
-          &copy; 2024 MMO Bazaar. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const OrderFulfilledPage = () => {
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-5xl lg:text-center">
               <p className="mt-2 text-md font-bold tracking-tight text-amber-500">
-                Rendelés teljesítése
+                Rendelés teljesítve
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
                 Köszönjük a vásárlást!
