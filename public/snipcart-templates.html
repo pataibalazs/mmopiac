@@ -8,19 +8,12 @@
     <div id="snipcart-templates">
       <cart-header>
         <div class="root">
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div className="text-lg mt-10">lets go</div>
-          <div class="text-lg text-red-500 mt-10" style="color: red">
-            lets go
-          </div>
+          <div className="text-lg mt-10">|</div>
+          <div className="text-lg mt-10">|</div>
+          <div className="text-lg mt-10">|</div>
+          <div className="text-lg mt-10">|</div>
+          <div className="text-lg mt-10">|</div>
+          <div className="text-lg mt-10">|</div>
 
           <header class="snipcart-cart-header" v-if="!loading">
             <close-cart-action
@@ -113,19 +106,90 @@
           </header>
         </div>
       </cart-header>
-      <billing section="top">
-        <div id="root">
+      <address-fields>
+        <div>
           <fieldset class="snipcart-form__set">
             <div class="snipcart-form__field">
-              <snipcart-label class="snipcart__font--tiny" for="phone">
-                In game username
+              <snipcart-label class="snipcart__font--tiny" for="ingamename">
+                Játékban a felhasználó név (ez kötelező)
               </snipcart-label>
-              <snipcart-input name="phone"></snipcart-input>
+              <snipcart-input name="ingamename"></snipcart-input>
+              <snipcart-error-message
+                name="ingamename"
+              ></snipcart-error-message>
+            </div>
+            <div class="snipcart-form__row">
+              <div class="snipcart-form__field snipcart-form__cell--large">
+                <snipcart-label class="snipcart__font--tiny" for="address1"
+                  >Utca (bármi beírható pl. XYZ, de kötelező adminisztráció
+                  miatt.)</snipcart-label
+                >
+                <snipcart-input name="address1"></snipcart-input>
+                <snipcart-error-message
+                  name="address1"
+                ></snipcart-error-message>
+              </div>
+            </div>
+
+            <div class="snipcart-form__field">
+              <snipcart-label class="snipcart__font--tiny" for="city"
+                >Város (bármi beírható pl. Szentes, de kötelező adminisztráció
+                miatt.)</snipcart-label
+              >
+              <snipcart-input name="city"></snipcart-input>
+              <snipcart-error-message name="city"></snipcart-error-message>
+            </div>
+
+            <div class="snipcart-form__field">
+              <snipcart-label class="snipcart__font--tiny" for="country"
+                >Ország (bármi választható pl. Csehország, de kötelező
+                adminisztráció miatt.)</snipcart-label
+              >
+              <snipcart-typeahead
+                type="dropdown"
+                name="country"
+                autocomplete="country"
+              ></snipcart-typeahead>
+            </div>
+
+            <div class="snipcart-form__row">
+              <div class="snipcart-form__field snipcart-form__cell--large">
+                <snipcart-label class="snipcart__font--tiny" for="postalCode"
+                  >Irányítószám (bármi beírható pl. 100, de kötelező
+                  adminisztráció miatt.)</snipcart-label
+                >
+                <snipcart-input
+                  name="postalCode"
+                  value="00000"
+                ></snipcart-input>
+                <snipcart-error-message
+                  name="postalCode"
+                ></snipcart-error-message>
+              </div>
             </div>
           </fieldset>
         </div>
-      </billing>
+      </address-fields>
     </div>
-    <script src="./renderBuyingProcessBar.js"></script>
+    <script>
+      document.addEventListener("snipcart.ready", () => {
+        console.log("Snipcart is ready");
+
+        Snipcart.subscribe("page.validating", function (ev, data) {
+          console.log("kaka1"); // Log 'kaka' when validation error occurs
+          if (ev.type === "some-page" && isValid(data)) {
+            ev.addError("field-name", "There is an error in this field");
+            console.log("kaka2"); // Log 'kaka' when validation error occurs
+          }
+        });
+
+        function isValid(data) {
+          // Implement your validation logic here
+          // Return true if there's an error, false if data is valid
+          // Example:
+          return !data["postalCode"]; // Assuming you're validating postalCode
+        }
+      });
+    </script>
   </body>
 </html>

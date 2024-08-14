@@ -172,6 +172,14 @@
               (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl));
         }
       })();
+
+      document.addEventListener("snipcart.ready", () => {
+        Snipcart.api.session.setLanguage("hun", {
+          actions: {
+            test: "hungary",
+          },
+        });
+      });
     </script>
 
     <div id="root"></div>

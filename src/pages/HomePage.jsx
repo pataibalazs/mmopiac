@@ -3,6 +3,7 @@ import PurchaseCard from "../components/PurchaseCard";
 import Accordion from "../components/Accordion";
 import ReviewCard from "../components/ReviewCard"; // Import the ReviewCard component
 import { Link } from "react-router-dom";
+import BuyingProcessBar from "../components/BuyingProcessBar";
 
 const Homepage = () => {
   const [reviews, setReviews] = useState([]);
@@ -44,6 +45,7 @@ const Homepage = () => {
               szerverekre aranyat venni!
             </div>
           </div>
+
           <div className="flex justify-center space-x-10 p-10">
             <PurchaseCard
               title="METIN2 ARANY"
