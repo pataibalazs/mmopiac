@@ -3,12 +3,14 @@ import PurchaseCard from "../components/PurchaseCard";
 import Accordion from "../components/Accordion";
 import ReviewCard from "../components/ReviewCard"; // Import the ReviewCard component
 import { Link } from "react-router-dom";
-import BuyingProcessBar from "../components/BuyingProcessBar";
+import { Crisp } from "crisp-sdk-web";
 
 const Homepage = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
+    Crisp.configure("146e3b82-53e8-43c3-a362-55e5566ea395");
+
     const fetchComments = async () => {
       try {
         const response = await fetch(

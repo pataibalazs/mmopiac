@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BuyingProcessBar from "../components/BuyingProcessBar";
+
 const OrderFulfilledPage = () => {
+  useEffect(() => {
+    // Remove the 'order' item from localStorage when the component mounts
+    localStorage.removeItem("order");
+  }, []);
+
   return (
     <div>
-      <BuyingProcessBar step="3" />
       <div className="min-h-screen bg-gray-100 flex flex-col items-center">
+        <BuyingProcessBar step="3" />
         <main className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg w-11/12 mt-10">
           <div className="bg-white">
             <div className="mx-auto max-w-7xl">

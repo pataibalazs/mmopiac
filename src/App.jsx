@@ -1,5 +1,10 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Header from "./components/Header";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
@@ -27,7 +32,8 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/order-fulfilled" element={<OrderFulfilledPage />} />
         <Route path="/error" element={<ErrorPage />} />
-        <Route path="/order-done/:orderId" element={<TradeChatPage />} />
+        <Route path="/order-done" element={<TradeChatPage />} />
+        <Route path="*" element={<Navigate to="/error" />} />
       </Routes>
       <Footer />
     </Router>

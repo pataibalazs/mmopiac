@@ -17,22 +17,22 @@ const steps = [
 
 const BuyingProcessBar = ({ step }) => {
   return (
-    <div className="flex justify-around bg-gray-100 pt-5">
+    <div className="flex flex-row bg-gray-100 pt-5">
       {steps.map((item, index) => (
-        <div key={index} className="flex flex-col items-center">
+        <div key={index} className="flex flex-col items-center px-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.1"
-            stroke={index < step ? "green" : "grey"}
+            stroke={index < step ? "green" : "#f59e0b"}
             className="size-10"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d={item.path} />
           </svg>
           <div
             className="text-lg font-normal"
-            style={{ color: index < step ? "green" : "grey" }}
+            style={{ color: index < step ? "green" : "#f59e0b" }}
           >
             {item.text}
           </div>

@@ -171,25 +171,5 @@
         </div>
       </address-fields>
     </div>
-    <script>
-      document.addEventListener("snipcart.ready", () => {
-        console.log("Snipcart is ready");
-
-        Snipcart.subscribe("page.validating", function (ev, data) {
-          console.log("kaka1"); // Log 'kaka' when validation error occurs
-          if (ev.type === "some-page" && isValid(data)) {
-            ev.addError("field-name", "There is an error in this field");
-            console.log("kaka2"); // Log 'kaka' when validation error occurs
-          }
-        });
-
-        function isValid(data) {
-          // Implement your validation logic here
-          // Return true if there's an error, false if data is valid
-          // Example:
-          return !data["postalCode"]; // Assuming you're validating postalCode
-        }
-      });
-    </script>
   </body>
 </html>
