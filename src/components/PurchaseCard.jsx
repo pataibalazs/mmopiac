@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { isAuthenticated, strapiAPI } from "../utils/auth";
 
 const PurchaseCard = ({
   title,
@@ -11,6 +13,55 @@ const PurchaseCard = ({
 }) => {
   const [millions, setMillions] = useState("");
   const [eur, setEur] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handlePurchase = async () => {
+    // Check if user is logged in
+    if (!isAuthenticated()) {
+      alert("Vásárláshoz be kell jelentkezned!");
+      navigate("/login");
+      return;
+    }
+
+    // Validate input
+    if (!millions || millions <= 0) {
+      alert("Kérlek add meg a vásárolni kívánt milliók számát!");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Make authenticated API call to create order
+      const response = await strapiAPI.createOrder({
+        productName: title,
+        productId: itemId,
+        quantity: parseInt(millions),
+        unitPrice: price,
+        totalPrice: parseFloat((millions * price).toFixed(3)),
+        description: itemDescription,
+        status: "pending",
+      });
+
+      if (response && response.ok) {
+        const orderData = await response.json();
+        alert(`Sikeres rendelés! Rendelés ID: ${orderData.data.id}`);
+        // Reset form
+        setMillions("");
+        setEur("");
+        // Optionally redirect to order confirmation page
+        // navigate(`/order-confirmation/${orderData.data.id}`);
+      } else {
+        throw new Error("Failed to create order");
+      }
+    } catch (error) {
+      console.error("Purchase error:", error);
+      alert("Hiba történt a rendelés során. Próbáld újra!");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleMillionsChange = (e) => {
     const value = e.target.value;
@@ -54,16 +105,11 @@ const PurchaseCard = ({
         />
       </div>
       <button
-        className="buy-button snipcart-add-item w-full py-2 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-600"
-        data-item-id={itemId}
-        data-item-url="https://thawing-dawn-87843-f5b692533558.herokuapp.com/product-validation"
-        data-item-price={price}
-        data-item-description={itemDescription}
-        data-item-image={itemImage}
-        data-item-name={title}
-        data-item-quantity={millions}
+        className="buy-button w-full py-2 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        onClick={handlePurchase}
+        disabled={loading}
       >
-        Megveszem
+        {loading ? "Rendelés..." : "Megveszem"}
       </button>
     </div>
   );

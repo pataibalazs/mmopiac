@@ -26,7 +26,7 @@ const getFormattedDate = () => {
   return `${month}-${day}-${year}`;
 };
 
-const ReviewsPage = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [newReview, setNewReview] = useState({
@@ -151,4 +151,4 @@ const ReviewsPage = () => {
   );
 };
 
-export default ReviewsPage;
+export default Reviews;
